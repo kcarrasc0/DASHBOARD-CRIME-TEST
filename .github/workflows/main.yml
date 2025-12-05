@@ -1,0 +1,33 @@
+name: CI de Qualidade de Software
+
+on: [push, pull_request]
+
+jobs:
+  testes-automatizados:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar código
+      uses: actions/checkout@v3
+
+    - name: Instalar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar Dependências
+      run: npm ci
+
+    - name: Rodar Testes Unitários (Jest)
+      run: npm run test:unit
+
+    - name: Rodar Testes Funcionais (Selenium Headless)
+    
+      uses: nanasess/setup-chromedriver@v2
+    
+    - name: Executar E2E
+      run: |
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # Simula uma tela
+        npm run test:func

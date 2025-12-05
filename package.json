@@ -1,0 +1,19 @@
+{
+  "name": "dashboard-crime-test",
+  "version": "1.0.0",
+  "description": "Projeto Final de QA",
+  "main": "src/script.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:unit": "jest tests/dashboard.test.js",
+    "test:func": "jest tests/dashboard.functional.test.js"
+  },
+  "jest": {
+    "testTimeout": 30000
+  },
+  "devDependencies": {
+    "chromedriver": "^143.0.0",
+    "jest": "^29.7.0",
+    "selenium-webdriver": "^4.16.0"
+  }
+}

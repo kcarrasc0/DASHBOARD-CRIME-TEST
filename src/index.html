@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Criminalidade - QA Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔍 Monitoramento de Crimes</h1>
+        <p>Filtre os dados para visualizar as estatísticas.</p>
+
+        <div class="filtros-box">
+            <div class="input-group">
+                <label for="data-inicio">Data Inicial:</label>
+                <input type="date" id="data-inicio">
+            </div>
+
+            <div class="input-group">
+                <label for="data-fim">Data Final:</label>
+                <input type="date" id="data-fim">
+            </div>
+
+            <div class="input-group">
+                <label for="tipo-crime">Tipo de Crime:</label>
+                <select id="tipo-crime">
+                    <option value="">-- Selecione --</option>
+                    <option value="roubo">Roubo</option>
+                    <option value="furto">Furto</option>
+                    <option value="homicidio">Homicídio</option>
+                    <option value="fraude">Fraude</option>
+                </select>
+            </div>
+
+            <button id="btn-filtrar" onclick="processarFiltro()">Filtrar Dados</button>
+        </div>
+
+        <div id="msg-erro" class="error-msg hidden"></div>
+
+        <div id="dashboard-resultado" class="dashboard hidden">
+            <h2>Resultados da Análise</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Total de Ocorrências</h3>
+                    <p id="res-total">124</p>
+                </div>
+                <div class="card">
+                    <h3>Região Crítica</h3>
+                    <p>Centro</p>
+                </div>
+                <div class="card">
+                    <h3>Status</h3>
+                    <p class="status-ok">Dados Atualizados</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <button id="btn-exportar" class="secondary" onclick="exportarRelatorio()">📄 Exportar PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
