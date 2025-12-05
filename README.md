@@ -61,7 +61,7 @@ Clone o repositório e instale as dependências:
 
 Bash
 
-git clone [https://github.com/SEU-USUARIO/DASHBOAR-CRIME-TEST.git](https://github.com/SEU-USUARIO/DASHBOAR-CRIME-TEST.git)
+git clone [https://github.com/SEU-USUARIO/DASHBOAR-CRIME-TEST.git](https://github.com/kcarrasc0/DASHBOARD-CRIME-TEST.git)
 cd DASHBOAR-CRIME-TEST
 npm install
 
